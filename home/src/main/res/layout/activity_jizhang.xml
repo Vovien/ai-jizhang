@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bill"
+            type="com.tubewiki.home.bean.jizhang.Bill" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ColorFAFA">
+
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="#1A000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_92"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dp_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="费用"
+                    android:textColor="@color/color_262626"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_cost"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="end"
+                    android:hint="元（人民币）"
+                    android:inputType="number|numberDecimal"
+                    android:text="@={bill.input}"
+                    android:textColor="@color/color_262626"
+                    android:textColorHint="#FFBFBFBF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.allen.library.SuperTextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_72"
+                app:sDividerLineColor="#FFF5F5F5"
+                app:sDividerLineHeight="@dimen/dp_1"
+                app:sDividerLineType="top"
+                app:sGradientAngle="90"
+                app:sLeftTextColor="#FF7F7F7F"
+                app:sLeftTextSize="@dimen/sp_17"
+                app:sLeftTextString="时间"
+                app:sLeftViewMarginLeft="@dimen/dp_20"
+                app:sRightTextColor="#FFBFBFBF"
+                app:sRightTextSize="@dimen/sp_17"
+                app:sRightTextString="请设置时间"
+                app:sRightTvDrawableRight="@drawable/ic_go_forward"
+                app:sRightViewMarginRight="@dimen/dp_20"
+                app:sTextViewDrawablePadding="@dimen/dp_8"
+                app:sTopDividerLineMarginLeft="@dimen/dp_20"
+                app:sTopDividerLineMarginRight="@dimen/dp_20" />
+
+        </LinearLayout>
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/tv_cycle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_72"
+            android:background="@color/ColorFAFA"
+            app:layout_constraintTop_toBottomOf="@id/ll_top"
+            app:sDividerLineColor="#FFF5F5F5"
+            app:sDividerLineHeight="@dimen/dp_1"
+            app:sDividerLineType="bottom"
+            app:sGradientAngle="90"
+            app:sLeftTextColor="#FF7F7F7F"
+            app:sLeftTextSize="@dimen/sp_17"
+            app:sLeftTextString="周期"
+            app:sLeftViewMarginLeft="@dimen/dp_20"
+            app:sRightTextColor="#FFBFBFBF"
+            app:sRightTextSize="@dimen/sp_17"
+            app:sRightTextString="请设置周期"
+            app:sRightTvDrawableRight="@drawable/ic_go_forward"
+            app:sRightViewMarginRight="@dimen/dp_20"
+            app:sTextViewDrawablePadding="@dimen/dp_8"
+            app:sTopDividerLineMarginLeft="@dimen/dp_20"
+            app:sTopDividerLineMarginRight="@dimen/dp_20" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:layout_marginTop="@dimen/dp_17"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cycle">
+
+            <RadioButton
+                android:id="@+id/rb_check"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:checked="@{bill.type==1}"
+                android:drawableTop="@drawable/tab_menu_check"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="检查"
+                android:textColor="@drawable/selector_check_text"
+                android:textSize="@dimen/sp_14" />
+
+            <RadioButton
+                android:id="@+id/rb_medicine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:checked="@{bill.type==2}"
+                android:drawableTop="@drawable/tab_menu_medicine"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="用药"
+                android:textColor="@drawable/selector_check_text"
+                android:textSize="@dimen/sp_14" />
+
+            <RadioButton
+                android:id="@+id/rb_embryo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:checked="@{bill.type==3}"
+                android:drawableTop="@drawable/tab_menu_embryo"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="胚胎"
+                android:textColor="@drawable/selector_check_text"
+                android:textSize="@dimen/sp_14" />
+
+            <RadioButton
+                android:id="@+id/rb_other"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:checked="@{bill.type==4}"
+                android:drawableTop="@drawable/tab_menu_other"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="其他"
+                android:textColor="@drawable/selector_check_text"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@color/white"
+            android:paddingTop="@dimen/dp_30"
+            android:paddingBottom="@dimen/dp_16"
+            android:paddingHorizontal="@dimen/dp_20"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_del"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textColor="#FFFF5A5F"
+                android:gravity="center"
+                android:text="删除" />
+
+            <com.allen.library.SuperButton
+                android:id="@+id/save_and_back"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_56"
+                android:layout_weight="1"
+                android:enabled="true"
+                android:text="保存并返回"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:sSelectorDisableColor="@color/picture_color_e5"
+                app:sSelectorNormalColor="@color/color_currency"
+                app:sSelectorPressedColor="@color/color_currency"
+                app:sUseSelector="true" />
+
+        </LinearLayout>
+
+        <com.allen.library.SuperButton
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_56"
+            android:enabled="false"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:sSelectorDisableColor="@color/picture_color_e5"
+            app:sSelectorNormalColor="@color/color_currency"
+            app:sSelectorPressedColor="@color/color_currency"
+            app:sUseSelector="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

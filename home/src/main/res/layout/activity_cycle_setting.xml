@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.apkdv.mvvmfast.view.StateLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/state_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                app:layout_constraintBottom_toTopOf="@id/ll_bottom"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/ll_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:paddingVertical="@dimen/dp_12"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_del"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="删除"
+                    android:textColor="#FFFF5A5F"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <com.allen.library.SuperButton
+                    android:id="@+id/save_and_back"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_56"
+                    android:layout_weight="1"
+                    android:enabled="true"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:sSelectorDisableColor="@color/picture_color_e5"
+                    app:sSelectorNormalColor="@color/color_currency"
+                    app:sSelectorPressedColor="@color/color_currency"
+                    app:sUseSelector="true" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_choose"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </FrameLayout>
+
+
+</com.apkdv.mvvmfast.view.StateLayout>

@@ -1,0 +1,17 @@
+<resources>
+<!--    <string name="app_name">孕妈妈AI记账</string>-->
+
+    <string name="index">首页</string>
+    <string name="accounts">记账</string>
+    <string name="knowledge">知识</string>
+    <string name="experience">经验</string>
+    <string name="join_group">加群</string>
+    <string name="video">视频</string>
+    <string name="mine">我的</string>
+    <string name="hospital">医院</string>
+    <string name="app_privacy_policy">孕妈妈AI记账社区隐私政策</string>
+    <string name="dont_agree_with_exit">不同意并退出</string>
+    <string name="agree">同意</string>
+    <string name="not_agree">不同意</string>
+
+</resources>

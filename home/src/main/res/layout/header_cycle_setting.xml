@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.allen.library.shape.ShapeRelativeLayout
+        android:id="@+id/rl_hospital"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_72"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_hint_hos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:text="医院"
+            android:textColor="#ff262626"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_hospital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_hint_hos"
+            android:layout_alignBottom="@+id/tv_hint_hos"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_toLeftOf="@+id/iv_collect"
+            android:layout_toRightOf="@+id/tv_hint_hos"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text="请选择"
+            android:textColor="#FFBFBFBF"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/iv_collect"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:src="@drawable/ic_go_forward" />
+
+    </com.allen.library.shape.ShapeRelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_8"
+        android:background="#FFFAFAFA"
+        app:layout_constraintTop_toBottomOf="@+id/rl_hospital" />
+
+    <TextView
+        android:id="@+id/tv_body_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_32"
+        android:text="身体状况"
+        android:textColor="#FF7F7F7F"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+</androidx.constraintlayout.widget.ConstraintLayout>

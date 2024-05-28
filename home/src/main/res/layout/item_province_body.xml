@@ -1,0 +1,39 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="province"
+            type="com.tubewiki.home.bean.jizhang.Province" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#FF1260FF"
+            app:visible="@{province.isChecked}"/>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingVertical="@dimen/dp_15"
+            android:text="@{province.name}"
+            android:textColor="@{province.isChecked ? @color/color_currency : @color/color_7F7F7F}"
+            android:textSize="@dimen/sp_14"
+            app:bg="@{province.textBg}"
+            tools:text="少精/弱精" />
+
+    </LinearLayout>
+
+
+</layout>

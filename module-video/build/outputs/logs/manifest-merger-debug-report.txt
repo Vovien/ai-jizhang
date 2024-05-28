@@ -1,0 +1,45 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:2:1-17:12
+INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:2:1-17:12
+INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:2:1-17:12
+	package
+		ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:3:5-30
+		INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+		INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:5:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:6:5-80
+	android:name
+		ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:6:22-77
+application
+ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:8:5-15:19
+activity#com.jmbon.video.view.VideoDetailActivity
+ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:10:9-14:65
+	android:screenOrientation
+		ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:12:13-49
+	android:windowSoftInputMode
+		ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:13:13-85
+	android:theme
+		ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:14:13-62
+	android:name
+		ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:11:13-53
+uses-sdk
+INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+		ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+		INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+		ADDED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+		INJECTED from D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml

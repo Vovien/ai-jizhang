@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="kotlin.Unit" />
+
+        <import type="com.tubewiki.home.R" />
+
+        <variable
+            name="physical"
+            type="com.tubewiki.home.bean.jizhang.Physical" />
+
+        <variable
+            name="onLabelClick"
+            type="kotlin.jvm.functions.Function1&lt;String, Unit>" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp_20">
+
+        <LinearLayout
+            android:id="@+id/ll_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.allen.library.shape.ShapeTextView
+                android:id="@+id/view_point"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                app:shapeSolidColor="@color/color_currency"
+                app:shapeType="oval" />
+
+            <TextView
+                android:id="@+id/tv_view_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_1"
+                android:text="@{physical.title}"
+                android:textColor="@color/color_262626"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                tools:text="精子情况" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_20"
+            android:orientation="horizontal"
+            app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_point"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

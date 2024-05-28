@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.apkdv.mvvmfast.view.StateLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/state_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ColorFAFA">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_32"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toTopOf="@id/ll_bottom"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_56"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.allen.library.SuperButton
+                android:id="@+id/save_and_back"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_56"
+                android:enabled="true"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:sSelectorDisableColor="@color/picture_color_e5"
+                app:sSelectorNormalColor="@color/color_currency"
+                app:sSelectorPressedColor="@color/color_currency"
+                app:sUseSelector="true" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.apkdv.mvvmfast.view.StateLayout>

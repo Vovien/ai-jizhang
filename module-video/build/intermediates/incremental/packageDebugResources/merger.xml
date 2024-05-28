@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\WorkSpace\lesborn\module-video\src\main\res"/><source path="D:\WorkSpace\lesborn\module-video\build\generated\res\rs\debug"/><source path="D:\WorkSpace\lesborn\module-video\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\WorkSpace\lesborn\module-video\src\main\res"><file name="video_adv_animator" path="D:\WorkSpace\lesborn\module-video\src\main\res\animator\video_adv_animator.xml" qualifiers="" type="animator"/><file name="activity_video_detail" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\activity_video_detail.xml" qualifiers="" type="layout"/><file name="activity_video_details" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\activity_video_details.xml" qualifiers="" type="layout"/><file name="activity_video_list" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\activity_video_list.xml" qualifiers="" type="layout"/><file name="dialog_video_album" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\dialog_video_album.xml" qualifiers="" type="layout"/><file name="fragment_video_details" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\fragment_video_details.xml" qualifiers="" type="layout"/><file name="fragment_video_detail_new" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\fragment_video_detail_new.xml" qualifiers="" type="layout"/><file name="include_video_guess" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\include_video_guess.xml" qualifiers="" type="layout"/><file name="item_video" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\item_video.xml" qualifiers="" type="layout"/><file name="item_video_list_circle" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\item_video_list_circle.xml" qualifiers="" type="layout"/><file name="item_video_list_guess" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\item_video_list_guess.xml" qualifiers="" type="layout"/><file name="item_video_list_video" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\item_video_list_video.xml" qualifiers="" type="layout"/><file name="item_vidoe_album" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\item_vidoe_album.xml" qualifiers="" type="layout"/><file name="layout_list_player_recyclerview" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\layout_list_player_recyclerview.xml" qualifiers="" type="layout"/><file name="layout_list_player_view" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\layout_list_player_view.xml" qualifiers="" type="layout"/><file name="layout_view_thumbnail" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\layout_view_thumbnail.xml" qualifiers="" type="layout"/><file name="view_video_adv" path="D:\WorkSpace\lesborn\module-video\src\main\res\layout\view_video_adv.xml" qualifiers="" type="layout"/><file path="D:\WorkSpace\lesborn\module-video\src\main\res\values\attr.xml" qualifiers=""><declare-styleable name="TickSeekBar">
+
+        <attr format="float" name="tsb_max"/>
+        <attr format="float" name="tsb_min"/>
+        <attr format="float" name="tsb_progress"/>
+        <attr format="boolean" name="tsb_progress_value_float"/>
+        <attr format="boolean" name="tsb_clear_default_padding"/>
+        <attr format="integer" name="tsb_ticks_count"/>
+        <attr format="boolean" name="tsb_seek_smoothly"/>
+        <attr format="boolean" name="tsb_r2l"/>
+        <attr format="boolean" name="tsb_user_seekable"/>
+        <attr format="boolean" name="tsb_only_thumb_draggable"/>
+
+
+        <attr format="dimension|reference" name="tsb_track_background_size"/>
+        <attr format="color|reference" name="tsb_track_background_color"/>
+        <attr format="dimension|reference" name="tsb_track_progress_size"/>
+        <attr format="color|reference" name="tsb_track_progress_color"/>
+        <attr format="boolean" name="tsb_track_rounded_corners"/>
+
+        <attr format="color|reference" name="tsb_thumb_color"/>
+        <attr format="dimension|reference" name="tsb_thumb_size"/>
+        <attr format="reference" name="tsb_thumb_drawable"/>
+        <attr format="boolean" name="tsb_thumb_adjust_auto"/>
+
+        <attr format="color|reference" name="tsb_thumb_text_color"/>
+        <attr name="tsb_show_thumb_text">
+            <enum name="none" value="0"/>
+            <enum name="below" value="1"/>
+            <enum name="above" value="2"/>
+        </attr>
+
+        <attr format="color|reference" name="tsb_tick_marks_color"/>
+        <attr format="dimension|reference" name="tsb_tick_marks_size"/>
+        <attr format="reference" name="tsb_tick_marks_drawable"/>
+        <attr format="boolean" name="tsb_tick_marks_ends_hide"/>
+        <attr format="boolean" name="tsb_tick_marks_swept_hide"/>
+        <attr name="tsb_show_tick_marks_type">
+            <enum name="none" value="0"/>
+            <enum name="oval" value="1"/>
+            <enum name="square" value="2"/>
+            <enum name="divider" value="3"/> 
+            <enum name="custom" value="4"/>
+        </attr>
+
+        <attr name="tsb_show_tick_texts">
+            <enum name="none" value="0"/>
+            <enum name="below" value="1"/>
+            <enum name="above" value="2"/>
+        </attr>
+        <attr format="reference|color" name="tsb_tick_texts_color"/>
+        <attr format="dimension|reference" name="tsb_tick_texts_size"/>
+        <attr format="reference" name="tsb_tick_texts_array"/>
+        <attr name="tsb_tick_texts_typeface">
+            <enum name="normal" value="0"/>
+            <enum name="monospace" value="1"/>
+            <enum name="sans" value="2"/>
+            <enum name="serif" value="3"/>
+        </attr>
+    </declare-styleable><declare-styleable name="FollowButton">
+        <attr format="dimension" name="fb_radius"/>
+        <attr format="dimension" name="fb_success_line_width"/>
+        <attr format="dimension" name="fb_add_line_width"/>
+        <attr format="color" name="fb_success_background"/>
+        <attr format="color" name="fb_add_background"/>
+        <attr format="color" name="fb_success_line_color"/>
+        <attr format="color" name="fb_add_line_color"/>
+        <attr format="dimension" name="fb_left_offset"/>
+        <attr format="dimension" name="fb_top_offset"/>
+        <attr format="dimension" name="fb_border_width"/>
+        <attr format="color" name="fb_border_color"/>
+    </declare-styleable></file><file path="D:\WorkSpace\lesborn\module-video\src\main\res\values\strings.xml" qualifiers=""><string name="suppose_you_want_to_see">猜你想看</string><string name="are_talking_about">正在讨论</string><string name="published_under_your_point_view">发表下您的观点…</string></file><file path="D:\WorkSpace\lesborn\module-video\src\main\res\values\styles.xml" qualifiers=""><style name="CircleStyle">
+		<item name="cornerFamily">rounded</item>
+		<item name="cornerSize">8dp</item>
+	</style></file></source><source path="D:\WorkSpace\lesborn\module-video\build\generated\res\rs\debug"/><source path="D:\WorkSpace\lesborn\module-video\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\WorkSpace\lesborn\module-video\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\WorkSpace\lesborn\module-video\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="TickSeekBar">
+
+        <attr format="float" name="tsb_max"/>
+        <attr format="float" name="tsb_min"/>
+        <attr format="float" name="tsb_progress"/>
+        <attr format="boolean" name="tsb_progress_value_float"/>
+        <attr format="boolean" name="tsb_clear_default_padding"/>
+        <attr format="integer" name="tsb_ticks_count"/>
+        <attr format="boolean" name="tsb_seek_smoothly"/>
+        <attr format="boolean" name="tsb_r2l"/>
+        <attr format="boolean" name="tsb_user_seekable"/>
+        <attr format="boolean" name="tsb_only_thumb_draggable"/>
+
+
+        <attr format="dimension|reference" name="tsb_track_background_size"/>
+        <attr format="color|reference" name="tsb_track_background_color"/>
+        <attr format="dimension|reference" name="tsb_track_progress_size"/>
+        <attr format="color|reference" name="tsb_track_progress_color"/>
+        <attr format="boolean" name="tsb_track_rounded_corners"/>
+
+        <attr format="color|reference" name="tsb_thumb_color"/>
+        <attr format="dimension|reference" name="tsb_thumb_size"/>
+        <attr format="reference" name="tsb_thumb_drawable"/>
+        <attr format="boolean" name="tsb_thumb_adjust_auto"/>
+
+        <attr format="color|reference" name="tsb_thumb_text_color"/>
+        <attr name="tsb_show_thumb_text">
+            <enum name="none" value="0"/>
+            <enum name="below" value="1"/>
+            <enum name="above" value="2"/>
+        </attr>
+
+        <attr format="color|reference" name="tsb_tick_marks_color"/>
+        <attr format="dimension|reference" name="tsb_tick_marks_size"/>
+        <attr format="reference" name="tsb_tick_marks_drawable"/>
+        <attr format="boolean" name="tsb_tick_marks_ends_hide"/>
+        <attr format="boolean" name="tsb_tick_marks_swept_hide"/>
+        <attr name="tsb_show_tick_marks_type">
+            <enum name="none" value="0"/>
+            <enum name="oval" value="1"/>
+            <enum name="square" value="2"/>
+            <enum name="divider" value="3"/> 
+            <enum name="custom" value="4"/>
+        </attr>
+
+        <attr name="tsb_show_tick_texts">
+            <enum name="none" value="0"/>
+            <enum name="below" value="1"/>
+            <enum name="above" value="2"/>
+        </attr>
+        <attr format="reference|color" name="tsb_tick_texts_color"/>
+        <attr format="dimension|reference" name="tsb_tick_texts_size"/>
+        <attr format="reference" name="tsb_tick_texts_array"/>
+        <attr name="tsb_tick_texts_typeface">
+            <enum name="normal" value="0"/>
+            <enum name="monospace" value="1"/>
+            <enum name="sans" value="2"/>
+            <enum name="serif" value="3"/>
+        </attr>
+    </declare-styleable><declare-styleable name="FollowButton">
+        <attr format="dimension" name="fb_radius"/>
+        <attr format="dimension" name="fb_success_line_width"/>
+        <attr format="dimension" name="fb_add_line_width"/>
+        <attr format="color" name="fb_success_background"/>
+        <attr format="color" name="fb_add_background"/>
+        <attr format="color" name="fb_success_line_color"/>
+        <attr format="color" name="fb_add_line_color"/>
+        <attr format="dimension" name="fb_left_offset"/>
+        <attr format="dimension" name="fb_top_offset"/>
+        <attr format="dimension" name="fb_border_width"/>
+        <attr format="color" name="fb_border_color"/>
+    </declare-styleable></configuration></mergedItems></merger>

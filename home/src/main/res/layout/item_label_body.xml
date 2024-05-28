@@ -1,0 +1,25 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.tubewiki.home.bean.jizhang.Item" />
+
+    </data>
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/dp_12"
+        android:text="@{item.name}"
+        android:textColor="@{item.isChecked ? @color/white : @color/text_color}"
+        android:textSize="@dimen/sp_14"
+        app:bg="@{item.textBg}"
+        tools:text="少精/弱精"/>
+
+</layout>

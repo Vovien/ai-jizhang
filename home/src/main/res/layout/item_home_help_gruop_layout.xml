@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.allen.library.shape.ShapeConstraintLayout
+        android:layout_width="179dp"
+        android:layout_height="@dimen/dp_91"
+        android:padding="@dimen/dp_12"
+        app:shapeCornersRadius="@dimen/dp_8"
+        app:shapeSolidColor="@color/color_F7F7F7"
+        app:shapeStrokeColor="@color/white"
+        app:shapeStrokeWidth="1.5dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:scaleType="centerCrop"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/color_262626"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/iv_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="标题标题标题标标题标题..." />
+
+        <com.allen.library.shape.ShapeTextView
+            android:id="@+id/iv_online"
+            android:layout_width="@dimen/dp_6"
+            android:layout_height="@dimen/dp_6"
+            app:layout_constraintBottom_toBottomOf="@id/tv_online_count"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toTopOf="@id/tv_online_count"
+            app:shapeCornersRadius="@dimen/dp_3"
+            app:shapeSolidColor="#FF92EC97" />
+
+        <TextView
+            android:id="@+id/tv_online_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_7F7F7F"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/iv_online"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="555人讨论中" />
+
+    </com.allen.library.shape.ShapeConstraintLayout>
+</layout>

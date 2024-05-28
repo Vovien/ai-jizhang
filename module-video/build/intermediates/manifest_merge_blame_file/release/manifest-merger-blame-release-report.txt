@@ -1,0 +1,32 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.jmbon.video" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="21"
+6-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+7        android:targetSdkVersion="30" />
+7-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml
+8
+9    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+9-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:5:5-79
+9-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:5:22-76
+10    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+10-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:6:5-80
+10-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:6:22-77
+11
+12    <application>
+12-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:8:5-15:19
+13        <activity
+13-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:10:9-14:65
+14            android:name="com.jmbon.video.view.VideoDetailActivity"
+14-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:11:13-53
+15            android:screenOrientation="portrait"
+15-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:12:13-49
+16            android:theme="@style/AppGlobalTheme.NoActionBar"
+16-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:14:13-62
+17            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|stateHidden" />
+17-->D:\WorkSpace\lesborn\module-video\src\main\AndroidManifest.xml:13:13-85
+18    </application>
+19
+20</manifest>

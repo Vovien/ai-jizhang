@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="isCurrent"
+            type="Boolean" />
+
+        <variable
+            name="bill"
+            type="com.tubewiki.home.bean.jizhang.BillListBean" />
+    </data>
+
+    <com.apkdv.mvvmfast.view.StateLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_scrollFlags="scroll">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="258dp"
+                    android:background="@color/color_currency">
+
+                    <ImageView
+                        android:id="@+id/imageLogo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/home_header_logo_icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/cycle_radio_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="@dimen/dp_68"
+                        android:background="@drawable/bg_switch"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/dp_5">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/current_cycle_radio_button"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector_switch"
+                            android:button="@null"
+                            android:checked="@{isCurrent}"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dp_5"
+                            android:paddingEnd="@dimen/dp_19"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:text="当前周期"
+                            android:textColor="@drawable/selector_switch_text"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/all_cycle_radio_button"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector_switch"
+                            android:button="@null"
+                            android:checked="@{!isCurrent}"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/dp_19"
+                            android:paddingTop="@dimen/dp_5"
+                            android:paddingEnd="@dimen/dp_19"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:text="全部周期"
+                            android:textColor="@drawable/selector_switch_text"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="@dimen/dp_56">
+
+                        <TextView
+                            android:id="@+id/tv_hint_all_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="¥"
+                            android:textColor="@color/white"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/tv_all_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{bill.costStr}"
+                            android:textColor="@color/white"
+                            android:textSize="44sp"
+                            tools:text=" 20312.02" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="@dimen/dp_16"
+                        android:drawableEnd="@drawable/icon_switch"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:visible="@{isCurrent}"
+                        tools:text="周期1费用" />
+
+                    <TextView
+                        android:id="@+id/tv_switch_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="@dimen/dp_16"
+                        android:text="全部周期费用"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:visible="@{!isCurrent}"
+                        tools:text="周期1费用" />
+
+
+                </FrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FF000928"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:paddingHorizontal="@dimen/dp_10"
+                    android:paddingVertical="@dimen/dp_20"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="5" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="122dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_check"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#FFFBFBFB">
+
+                        <ImageView
+                            android:id="@+id/iv_check"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/icon_check_selected"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@{bill.statistics.check.title}"
+                            android:textColor="@color/color_262626"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/iv_check"
+                            app:layout_constraintStart_toEndOf="@+id/iv_check"
+                            app:layout_constraintTop_toTopOf="@+id/iv_check"
+                            tools:text="检查" />
+
+                        <TextView
+                            android:id="@+id/tv_check_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="13dp"
+                            android:text="@{bill.statistics.check.percentage}"
+                            android:textColor="@color/color_currency"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/iv_check"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/iv_check"
+                            tools:text="38%" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginBottom="@dimen/dp_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <TextView
+                                android:id="@+id/tv_hint_check_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="¥"
+                                android:textColor="@color/color_262626"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_check_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{bill.statistics.check.costStr}"
+                                android:textColor="@color/color_262626"
+                                android:textSize="22sp"
+                                tools:text="20312.02" />
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_embryo"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:background="#FFFBFBFB">
+
+                        <ImageView
+                            android:id="@+id/iv_embryo"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/icon_embryo_selected"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_embryo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@{bill.statistics.embryo.title}"
+                            android:textColor="@color/color_262626"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/iv_embryo"
+                            app:layout_constraintStart_toEndOf="@+id/iv_embryo"
+                            app:layout_constraintTop_toTopOf="@+id/iv_embryo"
+                            tools:text="检查" />
+
+                        <TextView
+                            android:id="@+id/tv_embryo_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="13dp"
+                            android:text="@{bill.statistics.embryo.percentage}"
+                            android:textColor="@color/color_currency"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/iv_embryo"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/iv_embryo"
+                            tools:text="38%" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginBottom="@dimen/dp_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <TextView
+                                android:id="@+id/tv_hint_embryo_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="¥"
+                                android:textColor="@color/color_262626"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_embryo_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{bill.statistics.embryo.costStr}"
+                                android:textColor="@color/color_262626"
+                                android:textSize="22sp"
+                                tools:text="20312.02" />
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="122dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_medicine"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#FFFBFBFB">
+
+                        <ImageView
+                            android:id="@+id/iv_medicine"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/icon_medicine_selected"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_medicine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@{bill.statistics.medicine.title}"
+                            android:textColor="@color/color_262626"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/iv_medicine"
+                            app:layout_constraintStart_toEndOf="@+id/iv_medicine"
+                            app:layout_constraintTop_toTopOf="@+id/iv_medicine"
+                            tools:text="检查" />
+
+                        <TextView
+                            android:id="@+id/tv_medicine_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="13dp"
+                            android:text="@{bill.statistics.medicine.percentage}"
+                            android:textColor="@color/color_currency"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/iv_medicine"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/iv_medicine"
+                            tools:text="38%" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginBottom="@dimen/dp_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <TextView
+                                android:id="@+id/tv_hint_medicine_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="¥"
+                                android:textColor="@color/color_262626"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_medicine_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{bill.statistics.medicine.costStr}"
+                                android:textColor="@color/color_262626"
+                                android:textSize="22sp"
+                                tools:text="20312.02" />
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_other"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:background="#FFFBFBFB">
+
+                        <ImageView
+                            android:id="@+id/iv_other"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/icon_other_selected"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_other"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@{bill.statistics.other.title}"
+                            android:textColor="@color/color_262626"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/iv_other"
+                            app:layout_constraintStart_toEndOf="@+id/iv_other"
+                            app:layout_constraintTop_toTopOf="@+id/iv_other"
+                            tools:text="检查" />
+
+                        <TextView
+                            android:id="@+id/tv_other_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="13dp"
+                            android:text="@{bill.statistics.other.percentage}"
+                            android:textColor="@color/color_currency"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/iv_other"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/iv_other"
+                            tools:text="38%" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginBottom="@dimen/dp_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <TextView
+                                android:id="@+id/tv_hint_other_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="¥"
+                                android:textColor="@color/color_262626"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_other_cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{bill.statistics.other.costStr}"
+                                android:textColor="@color/color_262626"
+                                android:textSize="22sp"
+                                tools:text="20312.02" />
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:text="当前账单明细"
+                    android:textColor="@color/color_262626"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                    android:id="@+id/srl_refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:srlEnableRefresh="false">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="never"
+                        android:visibility="visible" />
+                </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </com.apkdv.mvvmfast.view.StateLayout>
+</layout>

@@ -1,0 +1,47 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="cycle"
+            type="com.tubewiki.home.bean.jizhang.Cycle" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/dp_20">
+
+        <ImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="@dimen/dp_11"
+            android:src="@{cycle.isSelected==1 ? @drawable/icon_cycle_select : @drawable/icon_cycle_unselect}" />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginStart="8dp"
+            app:sBackgroundDrawableRes="@color/white"
+            app:sGradientAngle="90"
+            app:sLeftTextColor="@color/color_262626"
+            app:sLeftTextSize="@dimen/sp_17"
+            app:sLeftTextString="周期1"
+            app:sLeftViewMarginLeft="@dimen/dp_16"
+            app:sRightTextColor="#FFBFBFBF"
+            app:sRightTextSize="@dimen/sp_17"
+            app:sRightTextString="编辑"
+            app:sRightTvDrawableRight="@drawable/ic_go_forward"
+            app:sRightViewMarginRight="@dimen/dp_16"
+            app:sTextViewDrawablePadding="@dimen/dp_8" />
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,18 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "PACKAGED_MANIFESTS",
+    "kind": "Directory"
+  },
+  "applicationId": "com.jmbon.video",
+  "variantName": "pre_relesae",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "outputFile": "../../merged_manifest/pre_relesae/AndroidManifest.xml"
+    }
+  ],
+  "elementType": "File"
+}

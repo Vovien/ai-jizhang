@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.apkdv.mvvmfast.view.StateLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/state_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_page"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toTopOf="@id/line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/color_F7F7F7"
+            app:layout_constraintBottom_toTopOf="@id/rg_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/rg_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioButton
+                android:id="@+id/rb_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/index"
+                android:textColor="@color/color_262626"
+                android:textSize="@dimen/sp_17"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rb_knowledge"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/accounts"
+                android:textColor="@color/color_BFBFBF"
+                android:textSize="@dimen/sp_17"
+                android:textStyle="bold" />
+
+            <com.allen.library.shape.ShapeFrameLayout
+                android:id="@+id/fl_add"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:shapeCornersRadius="20dp"
+                app:shapeSolidColor="@color/color_currency">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_home_add" />
+            </com.allen.library.shape.ShapeFrameLayout>
+
+            <RadioButton
+                android:id="@+id/rb_join_group"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:focusable="true"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/experience"
+                android:textColor="@color/color_BFBFBF"
+                android:textSize="@dimen/sp_17"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rb_mine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:focusable="true"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/mine"
+                android:textColor="@color/color_BFBFBF"
+                android:textSize="@dimen/sp_17"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <com.allen.library.shape.ShapeFrameLayout
+            android:id="@+id/fl_right_add"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_39"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/rg_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:shapeSolidColor="@color/color_currency"
+            app:shapeType="oval">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_home_add" />
+        </com.allen.library.shape.ShapeFrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.apkdv.mvvmfast.view.StateLayout>
